@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.Controllers.MainFrameController">
+  <tabs>
+    <Tab text="Аккаунт">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="AccountName" alignment="CENTER" contentDisplay="CENTER" layoutX="148.0" layoutY="35.0" prefHeight="70.0" prefWidth="305.0" textAlignment="CENTER">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="ExitAccountButton" layoutX="225.0" layoutY="310.0" mnemonicParsing="false" prefWidth="150.0" text="Выйти из аккаунта">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="RevenueTab" text="Доходы">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ScrollPane layoutY="1.0" prefHeight="340.0" prefWidth="600.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="600.0">
+                           <children>
+                              <TableView fx:id="RevenueTable" prefHeight="340.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="ReDate" prefWidth="120.0" text="Дата" />
+                                  <TableColumn fx:id="ReCategory" prefWidth="180.0" text="Категория" />
+                                    <TableColumn fx:id="ReDescription" prefWidth="150.0" text="Описание" />
+                                    <TableColumn fx:id="ReAmount" prefWidth="150.0" text="Сумма" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <Button fx:id="ReAddEntryButton" layoutX="120.0" layoutY="341.0" mnemonicParsing="false" onAction="#ReAddEntryButtonOnAction" prefWidth="120.0" text="Добавить запись" />
+                  <Button fx:id="ReDeleteEntryButton" layoutX="360.0" layoutY="341.0" mnemonicParsing="false" onAction="#ReDeleteEntryButtonOnAction" prefWidth="120.0" text="Удалить запись" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab fx:id="ExpenseTab" text="Расходы">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ScrollPane prefHeight="340.0" prefWidth="600.0" AnchorPane.bottomAnchor="30.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="600.0">
+                           <children>
+                              <TableView fx:id="ExpenseTable" prefHeight="340.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="ExDate" prefWidth="120.0" text="Дата" />
+                                    <TableColumn fx:id="ExCategory" prefWidth="180.0" text="Категория" />
+                                    <TableColumn fx:id="ExDescription" prefWidth="150.0" text="Описание" />
+                                    <TableColumn fx:id="ExAmount" prefWidth="150.0" text="Сумма" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+                  <Button fx:id="ExAddEntryButton" layoutX="120.0" layoutY="341.0" mnemonicParsing="false" onAction="#ExAddEntryButtonOnAction" prefWidth="120.0" text="Добавить запись" />
+                  <Button fx:id="ExDeleteEntryButton" layoutX="360.0" layoutY="341.0" mnemonicParsing="false" onAction="#ExDeleteEntryButtonOnAction" prefWidth="120.0" text="Удалить запись" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>

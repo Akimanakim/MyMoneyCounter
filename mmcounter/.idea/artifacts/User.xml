@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="User">
+    <output-path>$PROJECT_DIR$/out/artifacts/User</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/Server/WEB-INF/web.xml" />
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="postgresql-42.5.1(1)" />
+          <element id="library" level="project" name="hessian-4.0.60" />
+          <element id="library" level="project" name="xstream" />
+          <element id="library" level="project" name="jakarta.servlet-api-6.0.0" />
+        </element>
+        <element id="directory" name="classes">
+          <element id="module-output" name="Server" />
+          <element id="module-output" name="API" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

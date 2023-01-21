@@ -1,0 +1,19 @@
+<web-app>
+    <servlet>
+        <servlet-name>UserService</servlet-name>
+        <servlet-class>com.caucho.hessian.server.HessianServlet</servlet-class>
+        <init-param>
+            <param-name>home-class</param-name>
+            <param-value>server.UserServiceImpl</param-value>
+        </init-param>
+        <init-param>
+            <param-name>home-api</param-name>
+            <param-value>api.services.UserService</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <url-pattern>/UserService</url-pattern>
+        <servlet-name>UserService</servlet-name>
+    </servlet-mapping>
+</web-app>
