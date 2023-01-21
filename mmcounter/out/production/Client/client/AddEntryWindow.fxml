@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.Controllers.AddEntryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="350.0" style="-fx-background-color: #E0FFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.Controllers.AddEntryController">
    <children>
       <Label layoutX="80.0" layoutY="12.0" prefWidth="190.0" text="Добавить запись">
          <font>
@@ -39,7 +39,7 @@
          </font>
       </Label>
       <TextField fx:id="AmountTextField" layoutX="115.0" layoutY="222.0" prefHeight="26.0" prefWidth="200.0" />
-      <Button fx:id="AddButton" layoutX="135.0" layoutY="276.0" mnemonicParsing="false" onAction="#AddClicked" text="Добавить">
+      <Button fx:id="AddButton" layoutX="135.0" layoutY="276.0" mnemonicParsing="false" onAction="#AddClicked" style="-fx-background-color: #ADD8E6;" text="Добавить">
          <font>
             <Font size="14.0" />
          </font>

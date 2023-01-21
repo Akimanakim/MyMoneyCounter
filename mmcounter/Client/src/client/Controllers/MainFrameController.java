@@ -173,7 +173,7 @@ public class MainFrameController {
 
     @FXML
     private void ExDeleteEntryButtonOnAction(){
-        
+
         Transaction transaction = ExpenseTable.getSelectionModel().getSelectedItem();
         UserService userService = null;
         try {
