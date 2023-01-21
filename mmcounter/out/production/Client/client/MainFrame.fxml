@@ -21,7 +21,12 @@
                         <Font size="48.0" />
                      </font>
                   </Label>
-                  <Button fx:id="ExitAccountButton" layoutX="225.0" layoutY="310.0" mnemonicParsing="false" prefWidth="150.0" style="-fx-background-color: #ADD8E6;" text="Выйти из аккаунта">
+                  <Button fx:id="ExitAccountButton" layoutX="225.0" layoutY="310.0" mnemonicParsing="false" prefWidth="150.0" style="-fx-background-color: #FA8072;" text="Выйти из аккаунта">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="UpdateDataButton" layoutX="225.0" layoutY="265.0" mnemonicParsing="false" onAction="#UpdateDataButtonOnAction" prefWidth="150.0" style="-fx-background-color: #ADD8E6;" text="Обновить данные">
                      <font>
                         <Font size="14.0" />
                      </font>

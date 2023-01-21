@@ -41,6 +41,8 @@ public class MainFrameController {
     @FXML
     private Button ExitAccountButton;
     @FXML
+    private Button UpdateDataButton;
+    @FXML
     private Button ExDeleteEntryButton;
     @FXML
     private Button ExAddEntryButton;
@@ -67,10 +69,10 @@ public class MainFrameController {
     @FXML
     private TableView<Transaction> RevenueTable;
 
-
+    ObservableList<Transaction> transactionsReData = FXCollections.observableArrayList();
+    ObservableList<Transaction> transactionsExData = FXCollections.observableArrayList();
     private void initData(){
-        ObservableList<Transaction> transactionsReData = FXCollections.observableArrayList();
-        ObservableList<Transaction> transactionsExData = FXCollections.observableArrayList();
+
         UserService userService = null;
         try {
             userService = ServiceManager.getInstance().getUserService();
@@ -127,7 +129,41 @@ public class MainFrameController {
         AccountName.setText(userService.getCurrentAccount().getName());
         initData();
 
-}
+    }
+
+    @FXML
+    private void UpdateDataButtonOnAction(){
+        RevenueTable.getItems().clear();
+        ExpenseTable.getItems().clear();
+        UserService uService = null;
+        try {
+            uService = ServiceManager.getInstance().getUserService();
+        } catch (ConnectException e) {
+            throw new RuntimeException(e);
+        }
+
+        ArrayList<Transaction> transactions = uService.writeToTable();
+        for(Transaction t : transactions){
+            if(t.isExpense() == true){
+                transactionsExData.add(t);
+            }else{
+                transactionsReData.add(t);
+            }
+        }
+        ReDate.setCellValueFactory(new PropertyValueFactory<Transaction, Date>("date"));
+        ReCategory.setCellValueFactory(new PropertyValueFactory<Transaction, String>("category"));
+        ReDescription.setCellValueFactory(new PropertyValueFactory<Transaction, String>("description"));
+        ReAmount.setCellValueFactory(new PropertyValueFactory<Transaction, Integer>("amount"));
+
+        ExDate.setCellValueFactory(new PropertyValueFactory<Transaction, Date>("date"));
+        ExCategory.setCellValueFactory(new PropertyValueFactory<Transaction, String>("category"));
+        ExDescription.setCellValueFactory(new PropertyValueFactory<Transaction, String>("description"));
+        ExAmount.setCellValueFactory(new PropertyValueFactory<Transaction, Integer>("amount"));
+
+        RevenueTable.setItems(transactionsReData);
+        ExpenseTable.setItems(transactionsExData);
+    }
+
 
     @FXML
     private void ReAddEntryButtonOnAction(){

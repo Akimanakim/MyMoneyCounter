@@ -116,7 +116,7 @@ public class UserServiceImpl implements UserService {
             pst.setString(7, transaction.getDescription());
             pst.executeUpdate();
             System.out.println("Successfully added");
-            conn.close();
+            //conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
